@@ -2,22 +2,119 @@
 layout: default
 ---
 
-<div class="home">
+<div class="slider">
+  <div class="slider-img">
+    <img src="images/slider-1.jpg" alt="">
+    <img src="images/slider-2.jpg" alt="">
+    <img src="images/slider-3.jpg" alt="">
+  </div>
+  <div class="slider-msg">
+    <div>This my Blog!</div>
+    <div>Thank you for comming!</div>
+    <div>Have a good time here!</div>
+  </div>
+</div>
 
-  <h1 class="page-heading">Posts</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<div class="row row-intro">
+  <div class="cols-sm-2 txt-right">
+    <p>人生若只如初见，何事秋风悲画扇？
+    <p>等闲变却故人心，却道故人心易变。
+    <p>骊山语罢清宵半，泪雨霖铃终不怨。
+    <p>何如薄幸锦衣郎，比翼连枝当日愿。
+  </div>
+  <div class="cols-sm-4">
+    <p>人生若只如初见，何事秋风悲画扇？
+    <p>等闲变却故人心，却道故人心易变。
+    <p>骊山语罢清宵半，泪雨霖铃终不怨。
+    <p>何如薄幸锦衣郎，比翼连枝当日愿。
+  </div>
+</div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<div class="row row-post">
+  <div class="cols-md-1">
+    <section>
+      {% for post in site.categories.js limit:1 offset:0 %}
+      <header>
+        <span>JS</span>
+        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+      </header>
+      <p>
+        {{ post.excerpt }}
+      </p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
+      {% endfor %}
+      <ul>
+        {% for post in site.categories.js limit:4 offset:1 %}
+        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <div class="cols-md-1">
+    <section>
+      {% for post in site.categories.css limit:1 offset:1 %}
+      <header>
+        <span>CSS</span>
+        <h1>Management</h1>
+      </header>
+      <p>
+        We always find the most effective ways, find a proper approach to every client and employee, what guarantees a really good result.
+      </p>
+      {% endfor %}
+    </section>
+  </div>
+
+  <div class="cols-md-1">
+    <section>
+      {% for post in site.categories.html limit:1 offset:1 %}
+      <header>
+        <span>HTML</span>
+        <h1>Management</h1>
+      </header>
+      <p>
+        We always find the most effective ways, find a proper approach to every client and employee, what guarantees a really good result.
+      </p>
+      {% endfor %}
+    </section>
+  </div>
+
+  <div class="cols-md-1">
+    <section>
+      {% for post in site.categories.others limit:1 offset:1 %}
+      <header>
+        <span>其它</span>
+        <h1>Management</h1>
+      </header>
+      <p>
+        We always find the most effective ways, find a proper approach to every client and employee, what guarantees a really good result.
+      </p>
+      {% endfor %}
+    </section>
+  </div>
 
 </div>
+
+
+<div class="row row-recommend" id="middleBanner">
+  <div></div>
+  <div>
+    <div class="cols-md-2">
+      <section>
+        <h1>Why do you need to work with us?</h1>
+        <p>
+          We are the team of skilled and experienced professionals. We have specialists in prototyping, design, developing and analytics with an experience in projects of any scale and complexity: from tiny smart start-ups to huge brands well known worldwide. We always know what needs to be done to bring you to success
+        </p>
+      </section>
+    </div>
+    <div class="cols-md-2">
+      <section>
+        <h1>How you can get a free advice?</h1>
+        <p>
+          We assume the Box as a social-conscious company and take steps to support some non-commercial projects we appreciate. If you’re running a project that is able to make this world better, and you need a particular kind of professional consulting to make this happen, just get in touch and we will carefully consider your request.
+        </p>
+      </section>
+    </div>
+  </div>
+

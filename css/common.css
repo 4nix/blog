@@ -1,0 +1,120 @@
+/* common */
+a {
+  text-decoration: none;
+  color: #cbcbcb;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: arial,verdana,Microsoft YaHei,Tahoma,Simsun,sans-serif;
+}
+
+/* centent */
+
+.container {
+  margin: auto;
+  width: 1440px;
+  background-color: #fff;
+}
+
+.row {
+  overflow: auto;
+}
+
+[class^="cols-"] {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+}
+
+.cols-sm-1 {
+  width: 200px;
+}
+
+.cols-sm-2 {
+  width: 400px;
+}
+
+.cols-sm-3 {
+  width: 600px;
+}
+
+.cols-sm-4 {
+  width: 800px;
+}
+
+.cols-md-1 {
+  width: 300px;
+}
+
+.cols-md-2 {
+  width: 600px;
+}
+
+
+/* position */
+.txt-center {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: right;
+}
+
+#middleBanner {
+  background: url(../images/services-1.jpg) no-repeat;
+  height: auto;
+  padding: 0px;
+}
+
+#middleBanner > div {
+  height: 100px;
+  padding: 20px;
+}
+
+#middleBanner > div:nth-child(2) {
+  background-color: #1197f8;
+  color: white;
+}
+
+#footer {
+  background-color: #3e4147;
+  color: #fff;
+  font-size: 14px;
+  padding: 20px 0px;
+}
+
+#footer h1 {
+  font-size: 24px;
+}
+
+/* header */
+
+#header {
+  background-color: #3e4147;
+  height: 44px;
+  line-height: 44px;
+}
+
+.nav-bar {
+  width: 1440px;
+  margin: auto;
+}
+
+.nav-bar ul li, 
+.nav-bar ul {
+  display: inline-block; 
+  height: 44px;
+}
+
+.nav-bar ul li {
+  width: 80px;
+  text-align: center;
+}
+.nav-bar a:hover {
+  color: #fff;
+}

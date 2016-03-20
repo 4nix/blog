@@ -1,8 +1,20 @@
+/* common */
+a {
+  text-decoration: none;
+  color: #cbcbcb;
+}
+
+body {
+  background-color: #f0f0f0;
+  font-family: arial,verdana,Microsoft YaHei,Tahoma,Simsun,sans-serif;
+}
+
 /* centent */
 
-.content {
+.container {
   margin: auto;
   width: 1440px;
+  background-color: #fff;
 }
 
 /* slider */
@@ -151,11 +163,11 @@
 
 .row {
   overflow: auto;
-  padding: 5px 40px;
 }
 
 [class^="cols-"] {
   display: inline-block;
+  vertical-align: top;
   margin-right: 20px;
 }
 
@@ -204,7 +216,7 @@
 }
 
 #middleBanner > div {
-  height: 200px;
+  height: 100px;
   padding: 20px;
 }
 
@@ -214,6 +226,130 @@
 }
 
 #footer {
-  background-color: #191919;
+  background-color: #3e4147;
   color: #fff;
+  font-size: 14px;
+  padding: 20px 0px;
+}
+
+#footer h1 {
+  font-size: 24px;
+}
+
+/* header */
+
+#header {
+  background-color: #3e4147;
+  height: 44px;
+  line-height: 44px;
+}
+
+.nav-bar {
+  width: 1440px;
+  margin: auto;
+}
+
+.nav-bar ul li, 
+.nav-bar ul {
+  display: inline-block; 
+  height: 44px;
+}
+
+.nav-bar ul li {
+  width: 80px;
+  text-align: center;
+}
+.nav-bar a:hover {
+  color: #fff;
+}
+
+.row-intro, 
+.row-post {
+  padding: 40px 40px;
+}
+
+.row-intro {
+  border-bottom: 1px dashed #cbcbcb;
+}
+
+.row-intro div:nth-child(1) {
+  border-right: 1px #cbcbcb solid;
+  padding-right: 20px;
+}
+
+.row-post h1 {
+  font-size: 24px;
+  margin: 5px 0px 10px;
+}
+
+.row-post span {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.row-post p {
+  font-size: 14px;
+  color: #403607;
+}
+
+.row-post p.read-more {
+  text-align: right;
+  padding: 10px;
+  border-bottom: 1px solid #cbcbcb;
+}
+
+.row-post ul {
+  font-size: 14px;
+  margin: 10px 0px 0px 10px;
+  color: #ccc;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+.row-post ul li {
+  height: 20px;
+  line-height: 20px;
+}
+
+.row-recommend h1 {
+  font-size: 24px;
+}
+
+.row-recommend p {
+  font-size: 16px;
+}
+
+/* page post */
+.post {
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+
+.post header {
+  border-bottom: 1px solid #cbcbcb;
+  padding: 10px 0px;
+}
+
+.post header h1 {
+  font-size: 24px;
+  margin: 10px 0px;
+}
+
+.post header p {
+  color: #aaa;
+}
+
+.post span{
+  margin-left: 20px;
+}
+
+.post .author {
+  color: #1f8902;
+  margin-left: 0px;
+}
+
+.post-content {
+  margin-top: 20px;
+
 }

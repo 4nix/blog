@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "谈谈JS的yeild"
+date:   2016-03-20 20:44:56 +0800
+categories: js
+---
+第一次接触yield是在ruby中看到的, 不过实在看不出能有啥实际用途, 然后又在python中看到, 仍然看不出用途(╯‵□′)╯︵┻━┻
+
+再次看到就是在js里了, 虽然很晚, 但是这次得必须掌握了, 上代码:
+
+{% highlight mask %}
+function* foo(){
+  var index = 0;
+  while (index <= 2) {
+    yield index++;
+    }
+}
+
+var iterator = foo();
+console.log(iterator.next()); // { value: 0, done: false }
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: 2, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }  这里如果在循环外再次yield, 则会返回 {value:3, done:false}
+
+{% endhighlight %}
+
+这里function后的*无论如何也不能省, 但是可以加任意数量的空格, 因此可以猜测, js可能不index扔进内存里去了, 这么做我就不喜欢了
+
+
+今日美言:
+
+希望你们能用功读书，不要像我只能靠脸混吃混喝
