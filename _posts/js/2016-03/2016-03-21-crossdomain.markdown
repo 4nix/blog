@@ -8,17 +8,17 @@ categories: js
 本人比较懒, 代码越少越好, 最简单的:
 
 
-<pre class="brush: js;">
+{% highlight js %}
 <script src="http://remote.com/remote.js"></script>
-</pre>
+{% endhighlight %}
          
-<br><br><br>
+<br><br>
 
 ### 第二种, 使用JSONP
 原理就不细讲了, 其实就是上面那种方式换了种写法而已
 附上 ajax 调用JSONP 代码
 
-<pre class="brush: js;">
+{% highlight js %}
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function(){ 
@@ -38,16 +38,16 @@ $.ajax({
  });
 });
 </script>
-</pre>
+{% endhighlight %}
 目的页面结果:
 
-<pre class="brush: js;">
+{% highlight html %}
 flightHandler({
     "code": "CA1998",
     "price": 1780,
     "tickets": 5
 });
-</pre>
+{% endhighlight %}
 
 
 ### 第三种, 我实际项目中用的最多的, 毕竟接口方都是固定格式, 你要JSONP 人家不一定单为了你一个人写, 而且重要的是, 第二种直接就给出了接口地址, 不喜欢

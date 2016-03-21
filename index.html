@@ -54,9 +54,9 @@ layout: default
 
   <div class="cols-md-1">
     <section>
-      {% for post in site.categories.css limit:1 offset:1 %}
+      {% for post in site.categories.css limit:1 offset:0 %}
       <header>
-        <span>JS</span>
+        <span>CSS</span>
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
@@ -65,7 +65,7 @@ layout: default
       <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
       {% endfor %}
       <ul>
-        {% for post in site.categories.js limit:4 offset:1 %}
+        {% for post in site.categories.css limit:4 offset:1 %}
         <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
@@ -74,9 +74,9 @@ layout: default
 
   <div class="cols-md-1">
     <section>
-      {% for post in site.categories.html limit:1 offset:1 %}
+      {% for post in site.categories.html limit:1 offset:0 %}
       <header>
-        <span>JS</span>
+        <span>HTML</span>
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
@@ -85,7 +85,7 @@ layout: default
       <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
       {% endfor %}
       <ul>
-        {% for post in site.categories.js limit:4 offset:1 %}
+        {% for post in site.categories.html limit:4 offset:0 %}
         <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
@@ -94,9 +94,9 @@ layout: default
 
   <div class="cols-md-1">
     <section>
-      {% for post in site.categories.others limit:1 offset:1 %}
+      {% for post in site.categories.others limit:1 offset:0 %}
       <header>
-        <span>JS</span>
+        <span>其它</span>
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
@@ -106,7 +106,7 @@ layout: default
       {% endfor %}
     </section>
     <ul>
-        {% for post in site.categories.js limit:4 offset:1 %}
+        {% for post in site.categories.others limit:4 offset:1 %}
         <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
