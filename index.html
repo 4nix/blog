@@ -40,7 +40,7 @@ layout: default
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        {{ post.excerpt }}
+        {{ post.content | truncate: 100, "..." }}
       </p>
       <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
       {% endfor %}
@@ -56,13 +56,19 @@ layout: default
     <section>
       {% for post in site.categories.css limit:1 offset:1 %}
       <header>
-        <span>CSS</span>
-        <h1>Management</h1>
+        <span>JS</span>
+        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        We always find the most effective ways, find a proper approach to every client and employee, what guarantees a really good result.
+        {{ post.content | truncate: 100, "..." }}
       </p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
       {% endfor %}
+      <ul>
+        {% for post in site.categories.js limit:4 offset:1 %}
+        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
     </section>
   </div>
 
@@ -70,13 +76,19 @@ layout: default
     <section>
       {% for post in site.categories.html limit:1 offset:1 %}
       <header>
-        <span>HTML</span>
-        <h1>Management</h1>
+        <span>JS</span>
+        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        We always find the most effective ways, find a proper approach to every client and employee, what guarantees a really good result.
+        {{ post.content | truncate: 100, "..." }}
       </p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
       {% endfor %}
+      <ul>
+        {% for post in site.categories.js limit:4 offset:1 %}
+        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
     </section>
   </div>
 
@@ -84,14 +96,20 @@ layout: default
     <section>
       {% for post in site.categories.others limit:1 offset:1 %}
       <header>
-        <span>其它</span>
-        <h1>Management</h1>
+        <span>JS</span>
+        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        We always find the most effective ways, find a proper approach to every client and employee, what guarantees a really good result.
+        {{ post.content | truncate: 100, "..." }}
       </p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
       {% endfor %}
     </section>
+    <ul>
+        {% for post in site.categories.js limit:4 offset:1 %}
+        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
   </div>
 
 </div>
