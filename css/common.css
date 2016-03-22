@@ -13,7 +13,7 @@ body {
 
 .main-container {
   margin: auto;
-  width: 1440px;
+  width: 1280px;
   background-color: #fff;
 }
 
@@ -24,31 +24,31 @@ body {
 [class^="cols-"] {
   display: inline-block;
   vertical-align: top;
-  margin-right: 20px;
+  padding: 0px 6px;
 }
 
 .cols-sm-1 {
-  width: 200px;
+  width: 180px;
 }
 
 .cols-sm-2 {
-  width: 400px;
+  width: 360px;
 }
 
 .cols-sm-3 {
-  width: 600px;
+  width: 540px;
 }
 
 .cols-sm-4 {
-  width: 800px;
+  width: 720px;
 }
 
 .cols-md-1 {
-  width: 300px;
+  width: 280px;
 }
 
 .cols-md-2 {
-  width: 600px;
+  width: 560px;
 }
 
 

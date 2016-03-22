@@ -1,0 +1,35 @@
+---
+layout: post
+title:  csss文字截取
+date:   2016-03-22 08:38:17 +0800
+categories: css
+---
+平常用js截取字符串截太普遍了, 不过用js截取字符串有个缺点, 就是字符串的实际宽度不好把控, 比如截取"啊啊啊"与"fff"虽然长度相同, 但是宽度肯定不一样啊,一般我们使用overflow:hidden来保证宽度都相差不会太多, 但是后面的三个"..."就不好随便加了,
+
+<br>
+
+这个时候可以用overflow和text-overflow来一起解决
+
+css
+
+{% highlight css %}
+.css1{
+color:#6699ff;border:1px #ff8000 dashed;
+margin-bottom:20px;
+width: 20em;/*不允许出现半汉字截断*/
+}
+.css2 {
+overflow: hidden; /*自动隐藏文字*/
+text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+white-space: nowrap;/*强制不换行*/
+width: 20em;/*不允许出现半汉字截断*/
+color:#6699ff;border:1px #ff8000 dashed;
+}
+{% endhighlight %}
+
+html 
+
+{% highlight html %}
+<div class="css1">Web前端开发 – 专注于网站前端设计与Web用户体验</div>
+<div class="css2">Web前端开发 – 专注于网站前端设计与Web用户体验</div>
+{% endhighlight %}

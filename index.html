@@ -40,9 +40,9 @@ layout: default
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        {{ post.content | truncate: 100, "..." }}
+        {{ post.content | truncate: 100, "..." | strip_html }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.js limit:4 offset:1 %}
@@ -60,9 +60,9 @@ layout: default
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        {{ post.content | truncate: 100, "..." }}
+        {{ post.content | truncate: 100, "..." | strip_html }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.css limit:4 offset:1 %}
@@ -80,9 +80,9 @@ layout: default
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        {{ post.content | truncate: 100, "..." }}
+        {{ post.content | truncate: 100, "..." | strip_html }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.html limit:4 offset:0 %}
@@ -100,9 +100,9 @@ layout: default
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>
-        {{ post.content | truncate: 100, "..." }}
+        {{ post.content | truncate: 100, "..." | strip_html }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">read more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
       {% endfor %}
     </section>
     <ul>
@@ -135,4 +135,4 @@ layout: default
       </section>
     </div>
   </div>
-
+</div>
