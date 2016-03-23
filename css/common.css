@@ -7,19 +7,24 @@ a {
 body {
   background-color: #f0f0f0;
   font-family: arial,verdana,Microsoft YaHei,Tahoma,Simsun,sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 24px;
 }
 
 /* centent */
 
-.main-container {
+.container {
   margin: auto;
   width: 1280px;
-  background-color: #fff;
 }
 
 .row {
   overflow: auto;
 }
+
 
 [class^="cols-"] {
   display: inline-block;

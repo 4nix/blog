@@ -17,3 +17,5 @@ github_username:  4nix
 markdown: kramdown
 layouts_dir: ./_layouts/blog
 author: 5z
+paginate: 5
+paginate_path: "page:num"

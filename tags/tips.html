@@ -36,7 +36,7 @@ layout: default
     <section>
       {% for post in site.categories.js limit:1 offset:0 %}
       <header>
-        <span><a href="{{ site.baseurl }}/categories/js.html">JS</a></span>
+        <span>JS</span>
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p>

@@ -2,7 +2,7 @@
 layout: post
 title:  "用批处理运行本地server"
 date:   2016-03-17 21:38:00 +0800
-categories: tools
+tags: tips 
 ---
 实用小工具, 本地安装apache太麻烦, 都有ruby和python都有了, 何必再添一个, 但是每次使用命令又很麻烦, 不但要先进入对应目录, 还得敲一排字母, win下用批处理解决, mac等我有钱了再解决
 
