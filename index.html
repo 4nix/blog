@@ -24,10 +24,9 @@ layout: default
     <p>何如薄幸锦衣郎，比翼连枝当日愿。
   </div>
   <div class="cols-sm-4">
-    <p>人生若只如初见，何事秋风悲画扇？
-    <p>等闲变却故人心，却道故人心易变。
-    <p>骊山语罢清宵半，泪雨霖铃终不怨。
-    <p>何如薄幸锦衣郎，比翼连枝当日愿。
+    {% for post in site.posts limit:4 %}
+    <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
+    {% endfor %}
   </div>
 </div>
 
@@ -42,7 +41,7 @@ layout: default
       <p>
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.js limit:4 offset:1 %}
@@ -62,7 +61,7 @@ layout: default
       <p>
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.css limit:4 offset:1 %}
@@ -82,7 +81,7 @@ layout: default
       <p>
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.html limit:4 offset:0 %}
@@ -102,7 +101,7 @@ layout: default
       <p>
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
+      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
     </section>
     <ul>

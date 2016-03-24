@@ -1,0 +1,16 @@
+---
+layout: post
+title:  CSS 选择器权重问题
+date:   2016-03-24 22:05:23 +0800
+categories: css
+---
+在给DOM附加样式时会选择权重最大的样式, 具体分成
+* HTML = 1
+* CLASS = 10
+* ID = 100
+
+例如 "div" 的权重是1, ".class" 的权重是10, "#id"的权重是100, "div.class" 就是 1+10=11, "div#id"就是 100喽
+
+对于权重相同的, 则会按就近原则, 选择最近定义的样式, 离谁近就选谁(??试试上下)
+
+另外, class="class-1 class-2" 和 class="class-2 class-1" 这个是没有区别的
