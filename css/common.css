@@ -1,7 +1,11 @@
 /* common */
 a {
   text-decoration: none;
-  color: #cbcbcb;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 body {
@@ -70,39 +74,21 @@ h1 {
   text-align: right;
 }
 
-#middleBanner {
-  background: url(../images/services-1.jpg) no-repeat;
-  height: auto;
-  padding: 0px;
-}
-
-#middleBanner > div {
-  height: 100px;
-  padding: 20px;
-}
-
-#middleBanner > div:nth-child(2) {
-  background-color: #1197f8;
-  color: white;
-}
-
-#footer {
-  background-color: #3e4147;
-  color: #fff;
-  font-size: 14px;
-  padding: 20px 0px;
-}
-
-#footer h1 {
-  font-size: 24px;
-}
-
 /* header */
 
 #header {
   background-color: #3e4147;
   height: 44px;
   line-height: 44px;
+}
+
+#header a, #footer a {
+  color: #cbcbcb;
+}
+
+#header a:hover {
+ text-decoration: none;
+ color: #fff;
 }
 
 .nav-bar {
@@ -116,10 +102,40 @@ h1 {
   height: 44px;
 }
 
-.nav-bar ul li {
+.nav-list li {
   width: 80px;
   text-align: center;
+  font-size: 20px;
 }
 .nav-bar a:hover {
   color: #fff;
 }
+
+.nav-title {
+  font-size: 24px;
+}
+
+/* middle */
+
+
+
+/* footer */
+
+#footer {
+  background-color: #3e4147;
+  color: #fff;
+  font-size: 14px;
+  padding: 20px 0px;
+}
+
+#footer svg {
+  width: 40px;
+  height: 40px;
+}
+
+#footer li {
+  margin: 10px 0px;
+}
+
+
+

@@ -24,7 +24,7 @@ layout: default
     <p>何如薄幸锦衣郎，比翼连枝当日愿。
   </div>
   <div class="cols-sm-4">
-    {% for post in site.posts limit:4 %}
+    {% for post in site.posts limit:6 %}
     <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
     {% endfor %}
   </div>
@@ -38,7 +38,7 @@ layout: default
         <span><a href="{{ site.baseurl }}/categories/js.html">JS</a></span>
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
-      <p>
+      <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
       <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
@@ -55,10 +55,10 @@ layout: default
     <section>
       {% for post in site.categories.css limit:1 offset:0 %}
       <header>
-        <span>CSS</span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <span><a href="{{ site.baseurl }}/categories/css.html">CSS</a></span>
+        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h1>
       </header>
-      <p>
+      <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
       <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
@@ -75,10 +75,10 @@ layout: default
     <section>
       {% for post in site.categories.html limit:1 offset:0 %}
       <header>
-        <span>HTML</span>
+        <span><a href="{{ site.baseurl }}/categories/html.html">HTML</a></span>
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
-      <p>
+      <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
       <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
@@ -95,10 +95,10 @@ layout: default
     <section>
       {% for post in site.categories.others limit:1 offset:0 %}
       <header>
-        <span>其它</span>
+        <span><a href="{{ site.baseurl }}/categories/others.html">其它</a></span>
         <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
-      <p>
+      <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
       <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
@@ -114,13 +114,13 @@ layout: default
 </div>
 
 
-<div class="row row-recommend" id="middleBanner">
+<div class="row row-recommend">
   <div></div>
   <div>
     {% for post in site.tags.tips limit:2 %}
     <div class="cols-md-2">
       <section>
-        <h1>{{ post.title }}</h1>
+        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
         <p>
           {{ post.content | strip_html | truncate: 100, "..."  }}
         </p>

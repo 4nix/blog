@@ -5,7 +5,9 @@ layout: default
 <article class="post">
   <header>
     <h1>{{ page.title }}</h1>
-    <p><span class="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</span> 发布于<time datetime="{{ page.date | date: "%Y-%m-%d" }}">生日前</time> <span>分类 : <a href="##">{{ page.categories }}</a></span></p>
+    <p><span class="post-author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</span> 
+    	发布于<time class="post-time" datetime="{{ page.date | date: "%Y-%m-%d" }}">{% if page.custom_date %}{{ page.custom_date }}{% else %}{{ page.date | date: "%Y/%m/%d" }}{% endif %} </time> 
+    	<span class="post-categories">分类 : <a href="{{ site.baseurl }}/categories/{{ page.categories}}.html">{{ page.categories }}</a></span></p>
   </header>
   <div class="post-content">
   	{{ content }}

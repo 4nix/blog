@@ -1,0 +1,45 @@
+/* page post */
+
+.post {
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 10px;
+  min-height: 530px;
+  background-color: #fff;
+}
+
+.post header {
+  border-bottom: 1px solid #cbcbcb;
+  padding: 10px 0px;
+}
+
+.post header h1 {
+  font-size: 24px;
+  margin: 10px 0px;
+}
+
+.post header p {
+  color: #aaa;
+}
+
+.post .post-header span{
+  margin-left: 20px;
+}
+
+.post-author {
+  color: #1f8902;
+  margin-left: 0px 5px 0px 0px;
+}
+
+.post-time {
+  margin: 0px 10px;
+}
+
+
+.post-content {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.8;
+
+}

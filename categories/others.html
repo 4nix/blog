@@ -1,132 +1,21 @@
 ---
 layout: default
 ---
-
-<div class="slider">
-  <div class="slider-img">
-    <img src="images/slider-1.jpg" alt="">
-    <img src="images/slider-2.jpg" alt="">
-    <img src="images/slider-3.jpg" alt="">
-  </div>
-  <div class="slider-msg">
-    <div>比我聪明的人还在努力，我他妈努力还有什么用！</div>
-    <div>希望你们能用功读书，不要像我只能靠脸混吃混喝</div>
-    <div>为了让你周六能笑笑，周三就要给你讲那个笑话。</div>
-  </div>
-</div>
-
-
-<div class="row row-intro">
-  <div class="cols-sm-2 txt-right">
-    <p>人生若只如初见，何事秋风悲画扇？
-    <p>等闲变却故人心，却道故人心易变。
-    <p>骊山语罢清宵半，泪雨霖铃终不怨。
-    <p>何如薄幸锦衣郎，比翼连枝当日愿。
-  </div>
-  <div class="cols-sm-4">
-    <p>人生若只如初见，何事秋风悲画扇？
-    <p>等闲变却故人心，却道故人心易变。
-    <p>骊山语罢清宵半，泪雨霖铃终不怨。
-    <p>何如薄幸锦衣郎，比翼连枝当日愿。
-  </div>
-</div>
-
-<div class="row row-post">
-  <div class="cols-md-1">
-    <section>
-      {% for post in site.categories.js limit:1 offset:0 %}
-      <header>
-        <span>JS</span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-      </header>
-      <p>
-        {{ post.content | strip_html | truncate: 100, "..." }}
-      </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
-      {% endfor %}
-      <ul>
-        {% for post in site.categories.js limit:4 offset:1 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </section>
-  </div>
-
-  <div class="cols-md-1">
-    <section>
-      {% for post in site.categories.css limit:1 offset:0 %}
-      <header>
-        <span>CSS</span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-      </header>
-      <p>
-        {{ post.content | strip_html | truncate: 100, "..." }}
-      </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
-      {% endfor %}
-      <ul>
-        {% for post in site.categories.css limit:4 offset:1 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </section>
-  </div>
-
-  <div class="cols-md-1">
-    <section>
-      {% for post in site.categories.html limit:1 offset:0 %}
-      <header>
-        <span>HTML</span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-      </header>
-      <p>
-        {{ post.content | strip_html | truncate: 100, "..." }}
-      </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
-      {% endfor %}
-      <ul>
-        {% for post in site.categories.html limit:4 offset:0 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </section>
-  </div>
-
-  <div class="cols-md-1">
-    <section>
-      {% for post in site.categories.others limit:1 offset:0 %}
-      <header>
-        <span>其它</span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-      </header>
-      <p>
-        {{ post.content | strip_html | truncate: 100, "..." }}
-      </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more</a></p>
-      {% endfor %}
-    </section>
-    <ul>
-        {% for post in site.categories.others limit:4 offset:1 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-  </div>
-
-</div>
+ <div class="row row-list">
+    <h1>OTHERS</h1>
+   
+   {% for post in site.categories.others limit:10 %}
+   <div class="row-list-item">
+     <section>
+       <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+       <div class="row-list-content">
+         {{ post.content | strip_html | truncate: 400, "..."  }}
+       </div>
+     </section>
+   </div>
+   {% endfor %}
+ </div>
 
 
-<div class="row row-recommend" id="middleBanner">
-  <div></div>
-  <div>
-    {% for post in site.tags.tips limit:2 %}
-    <div class="cols-md-2">
-      <section>
-        <h1>{{ post.title }}</h1>
-        <p>
-          {{ post.content | strip_html | truncate: 100, "..."  }}
-        </p>
-      </section>
-    </div>
-    {% endfor %}
-  </div>
+<div class="row row-pagination">
 </div>
