@@ -1,15 +1,26 @@
 ---
 layout: page
-title: About
+title: Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+<div class="row row-about">
+	<div class="cols-sm-2 txt-right avatar">
+	  <img src="../images/photo.jpg" />
+	</div>
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+	<div class="cols-sm-3">
+	  <p>常用名: 5z
+	  <p>不常用名: 4nix
+	  <p>出生: 1987.8.29
+	  <p>爱好: 电影, 游戏, 听歌, 散步, 发呆, 吃, 喝, 睡, 大盘鸡(¯﹃¯)
+	  <p>不爱好: 拍照(人丑), 跑步(腿短), 唱歌(音奇)
+	  <hr>
+	  <p class="joke">看到这些段子我笑不出来: </p>
+	  <p>出生的时候, 护士看到我的脸对我妈说你确定要生出来么...
+	  <p>相亲的妹子看到我说这位置有人了...
+	  <p>iphone6要上市了, 太好了, 终于可以买iphone3了...
+	  <p>摔倒在地上的老奶奶看到是我爬起来就走了...
+	  <p><img src="../images/fun/1.gif">
+	</div>
+</div>

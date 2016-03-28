@@ -286,3 +286,17 @@
   font-size: 16px;
   line-height: 24px;
 }
+
+/*  row about */
+.row-about .avatar img {
+  width: 140px;
+}
+
+.row-about .joke {
+  margin: 10px 0px;
+}
+
+.row-about .joke ~ p {
+  padding-left: 10px;
+  font-size: 14px;
+}

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+ <div class="row row-list">
+    <h1>DIARY</h1>
+   
+   {% for post in site.categories.diary limit:10 %}
+   <div class="row-list-item">
+     <section>
+       <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+       <div class="row-list-content">
+         {{ post.content | strip_html | truncate: 400, "..."  }}
+       </div>
+     </section>
+   </div>
+   {% endfor %}
+ </div>
+
+
+<div class="row row-pagination">
+</div>

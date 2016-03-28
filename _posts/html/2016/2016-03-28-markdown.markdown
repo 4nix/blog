@@ -1,0 +1,69 @@
+---
+layout: post
+title:  markdown 语法速记
+date:   2016-03-28 22:18:02 +0800
+categories: html
+---
+拒绝大长篇, 取精华
+
+首先是标题
+# 标题 => <h1>标题</h1>
+## 标题 => <h2>标题</h2>
+...
+##### 标题 => <h6>标题</h6>
+
+> block => <blockquote>block</blockquote>
+
+修饰和强调
+
+* string * => <em>string</em>
+
+_ string _ => <em>string</em>
+
+** string ** => <strong>string</strong>
+
+__ string __ => <strong>string</strong>
+
+
+列表
+
+* str1      <ul><li>str1</li> 
+* str2  =>      <li>str2</li>
+* str3          <li>str3</li></ul>
+
++ str1      <ul><li>str1</li> 
++ str2  =>      <li>str2</li>
++ str3          <li>str3</li></ul>
+
+- str1      <ul><li>str1</li> 
+- str2  =>      <li>str2</li>
+- str3          <li>str3</li></ul>
+
+1. str1      <ol><li>str1</li> 
+2. str2  =>      <li>str2</li>
+3. str3          <li>str3</li></ol>
+
+链接
+
+[link name](www.xx.com "title") => <a href="www.xx.com" title="title">link name</a>
+
+可以定义数组
+xxx[link1][1]xxx[link][2]xxx
+
+[1]: www.xx1.com "title xx"
+[2]: www.xx2.com
+
+图片(比链接多个!)
+![alt txt](/path/img.jpg "title") => <img src="/path/img.jpg" title="title" alt="txt" />
+
+定义数组
+xxx![alt txt1][1]xxx![alt txt2][2]xxx
+
+[1]: /path/img1.jpg "title xx"
+[2]: /path/img2.jpg
+
+代码
+`<div>` => &lt;div&gt;
+
+也可以使用4个空格
+    <div> => &lt;div&gt;
