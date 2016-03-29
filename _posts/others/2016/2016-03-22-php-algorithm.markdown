@@ -12,6 +12,7 @@ PHP面试必备!!! 虽然我从没在项目中用过 ╮(╯▽╰)╭
 * 时间复杂度是 O(n^2)
 
 {% highlight PHP %}
+<?php 
 function bubble_sort($arr) { 
   $n = count($arr); 
   for($i = 0; $i < $n-1; $i++) {
@@ -26,6 +27,7 @@ function bubble_sort($arr) {
 
   return $arr;
 }
+?>
 {% endhighlight %}
 
 2.归并排序
