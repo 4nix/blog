@@ -8,7 +8,7 @@ categories: js
 
 再次看到就是在js里了, 虽然很晚, 但是这次得必须掌握了, 上代码:
 
-{% highlight mask %}
+{% highlight js %}
 function* foo(){
   var index = 0;
   while (index <= 2) {

@@ -1,65 +1,177 @@
 ---
 layout: post
-title:  正则笔记
-date:   2016-03-22 21:23:10 +0800
+title:  php常考的七大算法
+date:   2016-03-22 22:22:44 +0800
 categories: others
 ---
-网上说了千篇一律的就不说了, 这里说说需要pay attention的地方
+PHP面试必备!!! 虽然我从没在项目中用过 ╮(╯▽╰)╭
 
-1. 当 . | 等用在 [ ] 里面的时候, 它意思仅代表 符号"." 和 符号 "|"
+1.冒泡排序
 
-2.在php 如果要匹配 \, 则要使用四个\, 即\\\\
+* 冒泡排序是稳定排序 
+* 时间复杂度是 O(n^2)
 
-7.有些字符如 第四声的a
-    在unicode中由两个代码点组成, U+0061 (a) 和钝重音 U+0300 (') 组成, 结果 就是 /./无法匹配, 而/../可以匹配
-8.\unum 只支持4位
-   \xnum 支持任意数目, 特别是新出的音乐谱号C
+{% highlight PHP %}
+function bubble_sort($arr) { 
+  $n = count($arr); 
+  for($i = 0; $i < $n-1; $i++) {
+    for($j = $i + 1; $j < $n; $j++) {
+      if ($arr[$j] < $arr[$i]) { 
+        $temp = $arr[$i]; 
+        $arr[$i] = $arr[$j]; 
+        $arr[$j] = $temp; 
+      } 
+    } 
+  } 
 
-   9.使用\Q...\E , 中间的元字符将不再起作用, . 匹配 ., * 匹配 *
+  return $arr;
+}
+{% endhighlight %}
 
-   . 不能匹配null
+2.归并排序
 
-   11. \p{L} 匹配所有字母
-      \p{M} 匹配不能单独出现, 而必须与其他基本字符一起出现(重音符号,包围框等等)的字符
-      \p{Z} 用于表示分隔, 但本身不可见的字符 (各种空白字符)   (不可匹配圆角字符)
-      \p{S} 各种图形符号 和 字母符号  (如 +)
-      \p{P} 标点符号
-      \p{C} 匹配其他任何字符
+* 把数组分成最小的单元, 即两个单元作比较, 左边的始终小于右边的
+* 稳定，时间复杂度 O(nlog n)
 
-13. \G 的特点, 匹配上一次匹配结束的位置
-      1) 如果用了多个正则表达式, 后续的正则可以使用这个位置
-      2) (php 中似乎每次都指向了开头位置)
+{% highlight perl %}
+function Merge (&$arr, $left, $mid, $right) { 
+  $i = $left; 
+  $j = $mid + 1; 
+  $k = 0; 
+  $temp = array(); 
+
+  while ($i <= $mid && $j <= $right) { 
+    if ($arr[$i] <= $arr[$j]) 
+      $temp[$k++] = $arr[$i++]; 
+    else 
+      $temp[$k++] = $arr[$j++]; 
+  } 
+
+  while ($i <= $mid) 
+    $temp[$k++] = $arr[$i++]; 
+
+  while ($j <= $right) 
+    $temp[$k++] = $arr[$j++]; 
+
+  for ($i = $left, $j = 0; $i <= $right; $i++, $j++) 
+    $arr[$i] = $temp[$j];
+} 
+
+function MergeSort(&$arr, $left, $right) { 
+  if ($left < $right) { 
+    $mid = floor(($left + $right) / 2); 
+    MergeSort($arr, $left, $mid); 
+    MergeSort($arr, $mid + 1, $right); 
+    Merge($arr, $left, $mid, $right); 
+  }
+}
+{% endhighlight %}
+
+3. 二分查找--递归
+
+要求数组为顺序数组
+{% highlight perl %}
+function bin_search($arr, $low, $high, $value) {
+    if ($low > $high)
+        return false;
+    else {
+        $mid = floor(($low + $high) / 2);
+        if ($value == $arr[$mid])
+            return $mid;
+        elseif ($value < $arr[$mid])
+            return bin_search($arr, $low, $mid - 1, $value);
+        else
+            return bin_search($arr, $mid + 1, $high, $value);
+    }
+}
+{% endhighlight %}
+
+4.二分查找---非递归
+{% highlight perl %}
+function bin_search($arr, $low, $high, $value) {
+    while($low <= $high) {
+        $mid = floor(($low + $high) / 2);
+        if ($value == $arr[$mid])
+            return $mid;
+        elseif ($value < $arr[$mid])
+            $high = $mid-1;
+        else
+            $low = $mid+1;
+    }
+    return false;
+}
+{% endhighlight %}
 
 
-      \g 后项引用, 从后面倒着数
-      (foo)(bar)\g{-1}
+5.快速排序
 
-21. 正则有两种引擎, DFA 和 NFA
-      NFA (非确定型有穷自动机)   表达式主导, 历史更长, 使用者包括.net, java, php, python, perl, sed等
-      DFA (确定型有穷自动机)      文本主导,     匹配速度快, 匹配一致, 用起来很恼人 使用者有 eregp, awk, MySQL等
-      
-      如何区分?
-      1)首先看是否忽略优先量词, 如果是则是 传统型NFA, DFA 不支持, POSIX NFA中也没有意义 (.*?)
-                使用 /if|if.not/  匹配 if not, 如果匹配了if, 则是传统型NFA, 如果匹配了if not则是其它
-      2)DFA 不支持捕获型括号和回溯
+选取一个值做标准, 左侧比它小, 右侧比它大, 然后再重新对左右分组再次进行排序
+不稳定，时间复杂度 最理想 O(nlogn) 最差时间O(n^2
+{% highlight perl %}
+function quick_sort($arr) {
+    $n = count($arr);
+    if ($n <= 1)
+        return $arr;
+    $key = $arr[0];
+    $left_arr = array();
+    $right_arr = array();
+    for ($i = 1; $i < $n; $i++) {
+        if ($arr[$i] <= $key)
+            $left_arr[] = $arr[$i];
+        else
+            $right_arr[] = $arr[$i];
+    }
+    $left_arr = quick_sort($left_arr);
+    $right_arr = quick_sort($right_arr);
 
-      区别
-      1)DFA 会匹配最长的, 而NFA匹配最左的, POSIX NFA会选取最左边开始的最长匹配, 如:
-                       abcdefg     a|ab|abc|abcd                abcde   (a)?(ab)?
-         DFA             得到 abcd                                          得到ab
-         NFA             得到 a                                               得到a
+    return array_merge($left_arr, array($key), $right_arr);
+}
+{% endhighlight %}
 
-      速度:
-      1)DFA速度与正则表达式无关, 而NFA直接相关
-      2)DFA会提供更好的预编译, 术语为延迟求值, 不过预编译大部分都是白费功夫
+6.选择排序
+从第一个元素开始, 逐个比较, 记下最小值的键值, 一次比较完后把最小的值放置第一位, 继续从第二位开始比较, 很像冒泡
+不稳定，时间复杂度 O(n^2)
+{% highlight perl %}
+function select_sort($arr) {
+    $n = count($arr);
+    for ($i=0; $i < $n; $i++) {
+        $k = $i;
+        for ($j = $i + 1; $j < $n; $j++) {
+            if ($arr[$j] < $arr[$k])
+                $k = $j;
+            }
+            if ($k != $i) {
+                $temp = $arr[$i];
+                $arr[$i] = $arr[$k];
+                $arr[$k] = $temp;
+            }
+        }
 
-      能力:
-      1)捕获括号
-      2)环视
-      3)非匹配优先量词, 有序的多选结构(这俩其实一样)
-      4)占有优先量词, 固话分组(这俩其实一样)
+    return $arr;
+}
+{% endhighlight %}
 
-      传统型 NFA        功能强大
-      POSIX  NFA        符合标准
-      DFA                   运转稳定
+7.插入排序
 
+从开始元素开始, 向前进行排序, 保证前面的排序为顺序的, 但是仅在前一个元素大于后一个元素时才开始比较, 最坏进行2n次
+
+* 插入排序是稳定排序 
+* 插入排序：O(n^2); 
+{% highlight perl %}
+function insertSort($arr) {
+    $n = count($arr);
+    for ($i = 1; $i < $n; $i++) {
+        $tmp = $arr[$i];
+        $j = $i-1;
+        while ($arr[$j] > $tmp) {
+            $arr[$j + 1] = $arr[$j];
+            $arr[$j] = $tmp;
+            $j--;
+            if ($j < 0)
+                break;
+        }
+    }
+    
+    return $arr;
+}
+{% endhighlight %}
