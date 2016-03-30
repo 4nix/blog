@@ -192,7 +192,13 @@
   height: 24px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
 
+.row-post li {
+  width: 19em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .row-post a {

@@ -9,7 +9,7 @@ layout: default
      <section>
        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
        <div class="row-list-content">
-         {{ post.content | strip_html | truncate: 400, "..."  }}
+         {{ post.content | strip_html | truncate: 300, "..."  }}
        </div>
      </section>
    </div>
