@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <div class="row row-about">
-	<div class="cols-sm-2 txt-left avatar">
+	<div class="cols-sm-2 txt-right avatar">
 	  <img src="../images/photo.jpg" id="avatar" />
 	</div>
 

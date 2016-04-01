@@ -4,30 +4,84 @@ $.fn.imageblur = function(options) {
 
 	var $this = $(this);
 
-	//更改postion
-	$this.css("position", "relative");
+	$this.ready(function() {
 
-	//绘制canvas
-	var canvas = $("<canvas width="+$this.width()+" height="+$this.height()+" />", {
-		// width: $this.width(),
-		// height: $this.height(),
-	});
-	$this.after(canvas);
 
-	var cloneImage = $this.clone();
-	var docCanvas = canvas[0];
-	cloneImage.css({
-		"filter": "blur(5px)",
-		"-webkit-filter": "blur(5px)"
-	});
+		//更改postion
+		$this.parent().css("position", "relative");
 
-	ctx = docCanvas.getContext("2d");
+		//绘制canvas
+		var canvas = $("<canvas width="+$this.width()+" height="+$this.height()+" />", {
+			// width: $this.width(),
+			// height: $this.height(),
+		});
+		canvas.css({
+			"filter": "blur(5px)",
+			"-webkit-filter": "blur(5px)",
+			"position": "absolute",
+			"z-index": 100,
+			"left": $this.position().left,
+			"top": $this.position().top,
+			"cursor": "pointer"
+		});
+		$this.after(canvas);
 
-	cloneImage[0].onload = function() {
-		ctx.drawImage(cloneImage[0], 0, 0, $this.width(), $this.height());
-	};
-	
+		var cloneImage = $this.clone();
+		var docCanvas = canvas[0];
 
+
+		ctx = docCanvas.getContext("2d");
+		var img = new Image();
+
+
+		img.onload = function() {
+			ctx.drawImage(img, 0, 0, $this.width(), $this.height());
+			ctx.globalCompositeOperation = 'destination-out';
+		};
+		
+		img.src = $this.attr("src");
+
+
+		var state = false;
+
+	    docCanvas.addEventListener("mousedown", function(e) {
+	        state = true;
+	            var x = e.pageX;
+	            var y = e.pageY;
+
+	            var c = this.getBoundingClientRect();
+	            // console.log(c.left, e.pageX, c.top, e.pageY);
+	            // ctx.fillStyle = "transparent";
+	            ctx.beginPath();
+
+	            ctx.arc(x - c.left, y - c.top, 10, 0, 2*Math.PI);
+
+	            // ctx.arc(0, 0, 10, 0, 2*Math.PI);
+	            ctx.fill();
+	    });
+
+	    document.addEventListener("mouseup", function(e) {
+	        state = false;
+	    });
+
+		docCanvas.addEventListener("mousemove", function(e) {
+	        if (state) {
+	            var x = e.pageX;
+	            var y = e.pageY;
+
+	            var c = this.getBoundingClientRect();
+	            // console.log(c.left, e.pageX, c.top, e.pageY);
+	            // ctx.fillStyle = "transparent";
+	            ctx.beginPath();
+
+	            ctx.arc(x - c.left, y - c.top, 10, 0, 2*Math.PI);
+
+	            // ctx.arc(0, 0, 10, 0, 2*Math.PI);
+	            ctx.fill();
+	        }
+	    });
+
+ 	});
 
 	// preImage: function(url, callback) {  
  //    	var img = new Image(); //创建一个Image对象，实现图片的预下载  
