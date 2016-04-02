@@ -25,7 +25,7 @@ layout: default
   </div>
   <div class="cols-sm-4">
     {% for post in site.posts limit:6 %}
-    <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
+    <p><a title="{{ post.title }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
     {% endfor %}
   </div>
 </div>
@@ -35,17 +35,17 @@ layout: default
     <section>
       {% for post in site.categories.js limit:1 offset:0 %}
       <header>
-        <span><a href="{{ site.baseurl }}/categories/js.html">JS</a></span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <span><a title="JS" href="{{ site.baseurl }}/categories/js.html">JS</a></span>
+        <h1><a  title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
+      <p class="read-more"><a class="post-link" title=" title="{{ post.title }}"" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.js limit:4 offset:1 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        <li><a class="post-link"  title="{{ post.title }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
     </section>
@@ -55,17 +55,17 @@ layout: default
     <section>
       {% for post in site.categories.css limit:1 offset:0 %}
       <header>
-        <span><a href="{{ site.baseurl }}/categories/css.html">CSS</a></span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h1>
+        <span><a title="CSS" href="{{ site.baseurl }}/categories/css.html">CSS</a></span>
+        <h1><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h1>
       </header>
       <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
+      <p class="read-more"><a  title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.css limit:4 offset:1 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        <li><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
     </section>
@@ -75,17 +75,17 @@ layout: default
     <section>
       {% for post in site.categories.html limit:1 offset:0 %}
       <header>
-        <span><a href="{{ site.baseurl }}/categories/html.html">HTML</a></span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <span><a title="HTML" href="{{ site.baseurl }}/categories/html.html">HTML</a></span>
+        <h1><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
+      <p class="read-more"><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
       <ul>
         {% for post in site.categories.html limit:4 offset:0 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        <li><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
     </section>
@@ -95,18 +95,18 @@ layout: default
     <section>
       {% for post in site.categories.others limit:1 offset:0 %}
       <header>
-        <span><a href="{{ site.baseurl }}/categories/others.html">其它</a></span>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <span><a title="其它技术" href="{{ site.baseurl }}/categories/others.html">其它</a></span>
+        <h1><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
       </header>
       <p class="excerpt">
         {{ post.content | strip_html | truncate: 100, "..." }}
       </p>
-      <p class="read-more"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
+      <p class="read-more"><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">more→</a></p>
       {% endfor %}
     </section>
     <ul>
         {% for post in site.categories.others limit:4 offset:1 %}
-        <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        <li><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
         {% endfor %}
       </ul>
   </div>
@@ -120,7 +120,7 @@ layout: default
     {% for post in site.tags.tips limit:2 %}
     <div class="cols-md-2">
       <section>
-        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <h1><a title="{{ post.title }}" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
         <p>
           {{ post.content | strip_html | truncate: 100, "..."  }}
         </p>
