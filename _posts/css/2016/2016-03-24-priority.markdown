@@ -3,14 +3,40 @@ layout: post
 title:  CSS 选择器权重问题
 date:   2016-03-24 22:05:23 +0800
 categories: css
+uid: 1459573112
 ---
 在给DOM附加样式时会选择权重最大的样式, 具体分成
-* HTML = 1
-* CLASS = 10
-* ID = 100
 
-例如 "div" 的权重是1, ".class" 的权重是10, "#id"的权重是100, "div.class" 就是 1+10=11, "div#id"就是 100喽
+* *HTML = 1*
+* *CLASS = 10*
+* *ID = 100*
 
-对于权重相同的, 则会按就近原则, 选择最近定义的样式, 离谁近就选谁(??试试上下)
+例如 **div** 的权重是1, **.class** 的权重是10, **#id**的权重是100
 
-另外, class="class-1 class-2" 和 class="class-2 class-1" 这个是没有区别的
+所以**div.class**的权重就是**1+10=11**, **div#id**就是**101**
+
+<br>
+
+对于权重相同的, 则会按就近原则, 选择最近定义的样式, 离谁近就选谁
+
+就算你写成这样
+
+{% highlight css %}
+<style type="text/css">
+.div {
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+  display: inline-block;
+}
+</style>
+<div class="div"></div>
+
+<style>
+.div {
+  background-color: #faa; /* 最终这个会起作用 */
+}
+</style>
+{% endhighlight %}
+
+另外, **class="class-1 class-2"** 和 **class="class-2 class-1"** 这两个是没有区别的

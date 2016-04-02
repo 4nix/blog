@@ -90,4 +90,7 @@
   color: #f00;
 }
 
-
+.post-content a {
+  color: #299f1a;
+  text-decoration: underline;
+}

@@ -3,33 +3,41 @@ layout: post
 title:  csss文字截取
 date:   2016-03-22 08:38:17 +0800
 categories: css
+uid: 1459568768
 ---
-平常用js截取字符串截太普遍了, 不过用js截取字符串有个缺点, 就是字符串的实际宽度不好把控, 比如截取"啊啊啊"与"fff"虽然长度相同, 但是宽度肯定不一样啊,一般我们使用overflow:hidden来保证宽度都相差不会太多, 但是后面的三个"..."就不好随便加了,
+平常用js截取字符串截太普遍了, 不过用js截取字符串有个缺点, 就是字符串的实际宽度不好把控, 比如截取"啊啊啊"与"fff"虽然长度相同, 但是宽度不一样.
+一般解决方案是先截取最可能短的字符串, 然后使用**overflow:hidden**防止溢出, 但是如果设计要求后面补足字符串, 比如"..."就不好弄了
 
 <br>
 
-这个时候可以用overflow和text-overflow来一起解决
+还好css3有了**text-overflow**这个属性, 可以通过和**overflow: hidden** 一起解决这个问题
+
+附代码:
 
 css
 
 {% highlight css %}
 .css1{
-color:#6699ff;border:1px #ff8000 dashed;
+border:1px #aaa dashed;
 margin-bottom:20px;
-width: 20em;/*不允许出现半汉字截断*/
+width: 200px; 
 }
 .css2 {
-overflow: hidden; /*自动隐藏文字*/
-text-overflow: ellipsis;/*文字隐藏后添加省略号*/
-white-space: nowrap;/*强制不换行*/
-width: 20em;/*不允许出现半汉字截断*/
-color:#6699ff;border:1px #ff8000 dashed;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap; /* 不准换行 */
+width: 200px;
+border:1px #aaa solid;
 }
 {% endhighlight %}
 
 html 
 
 {% highlight html %}
-<div class="css1">Web前端开发 – 专注于网站前端设计与Web用户体验</div>
-<div class="css2">Web前端开发 – 专注于网站前端设计与Web用户体验</div>
+<div class="css1">这是一这是二这是三这是四这是五这是六这是七这是八这是九</div>
+<div class="css2">这是一这是二这是三这是四这是五这是六这是七这是八这是九</div>
 {% endhighlight %}
+
+<br>
+亲自试一试
+<iframe width="100%" height="300" src="//jsfiddle.net/little5z/1mzgwok2/embedded/html,css,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>

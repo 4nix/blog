@@ -2,9 +2,11 @@
 layout: post
 title:  "csss reset文件"
 date:   2016-03-22 06:50:28 +0800
+uid: 1459567151
 categories: css
 ---
 CSS的reset文件是用来去掉html的默认样式的, 大部分网站的reset文件都不一样, 不过都大同小异, 选哪个都没有大碍
+
 下面附上5个号称最流行的下载链接
 
 
@@ -14,12 +16,30 @@ CSS的reset文件是用来去掉html的默认样式的, 大部分网站的reset�
 
 [HTML5 Doctor CSS Reset](http://cssreset.com/?dl_id=3)
 
+打着HTML5的旗号, 比第一个多了**mark**, **abbr**, **dfn** 等元素
+
 
 [Yahoo! (YUI 3) Reset CSS](http://cssreset.com/?dl_id=4)
 
+YUI的, 话说YUI已经不再更新了, 估计用这个的会越来越少吧, 其实里面跟上面比也没太大差别
+
 [Universal Selector ‘*’ Reset](http://cssreset.com/?dl_id=5)
+
+流行程度排行第四, 可是, 这个里面的内容就三行:
+
+    * {
+	    margin: 0;
+	    padding: 0;
+	}
+
+![(╯‵□′)╯︵┻━┻]({{site.baseurl}}/images/fun/wunai.jpg)
+他上头一定有人 !!
 
 [Normalize.css 1.0](http://cssreset.com/?dl_id=6)
 
+这个应该是最推荐的, 各种路人推荐, 可惜我不喜欢
 
+<br><br>
 
+附上排行链接
+[2016’s most popular CSS Reset scripts](http://cssreset.com/)
