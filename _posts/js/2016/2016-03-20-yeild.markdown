@@ -3,30 +3,38 @@ layout: post
 title:  "谈谈JS的yeild"
 date:   2016-03-20 20:44:56 +0800
 categories: js
+uid: 1459677138
 ---
-第一次接触yield是在ruby中看到的, 不过实在看不出能有啥实际用途, 然后又在python中看到, 仍然看不出用途(╯‵□′)╯︵┻━┻
+第一次接触yield是在ruby中看到的, 不过实在看不出能有啥实际用途, 
+
+然后又在python中看到, 仍然看不出用途![掀桌](http://ww3.sinaimg.cn/small/6ff2374djw1f2jm3rhyqgg201y01eaa0.gif)
 
 再次看到就是在js里了, 虽然很晚, 但是这次得必须掌握了, 上代码:
 
 {% highlight js %}
 function* foo(){
+  console.log("foo start");
   var index = 0;
   while (index <= 2) {
-    yield index++;
-    }
+    console.log("loop start");
+    yield index++;  //这里会return回index的值, 但是当前状态被保留了, 下次再次迭代时会从这里开始继续开始
+    console.log("loop end");
+  }
 }
 
 var iterator = foo();
 console.log(iterator.next()); // { value: 0, done: false }
 console.log(iterator.next()); // { value: 1, done: false }
 console.log(iterator.next()); // { value: 2, done: false }
-console.log(iterator.next()); // { value: undefined, done: true }  这里如果在循环外再次yield, 则会返回 {value:3, done:false}
+console.log(iterator.next()); // { value: undefined, done: true } 如果不要这一句, 你会发现最后一个loop end没有输出
+//整个控制台只输出一次foo start
 
 {% endhighlight %}
 
-这里function后的*无论如何也不能省, 但是可以加任意数量的空格, 因此可以猜测, js可能不index扔进内存里去了, 这么做我就不喜欢了
+这里 __function__ 后的 __*__ 无论如何也不能省, 但是可以加任意数量的空格
 
+使用这种方式生成的函数其实是生成了一个**生成器函数(Generator Function)**, 是ESMA6的新特性(怪不得都不知道)
 
-今日美言:
+[参考链接](http://www.cnblogs.com/fsjohnhuang/p/4166267.html)
 
-希望你们能用功读书，不要像我只能靠脸混吃混喝
+![不高兴](http://ww3.sinaimg.cn/small/6ff2374djw1f2jmjqd0gvg202y0290ss.gif)

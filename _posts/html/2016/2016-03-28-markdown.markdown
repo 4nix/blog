@@ -3,30 +3,42 @@ layout: post
 title:  markdown 语法速记
 date:   2016-03-28 22:18:02 +0800
 categories: html
+uid: 1459677117
 ---
-拒绝大长篇, 取精华
+[快速入门](http://wowubuntu.com/markdown/basic.html)
 
-首先是标题
-# 标题 => <h1>标题</h1>
-## 标题 => <h2>标题</h2>
+[完整文档](http://wowubuntu.com/markdown/)
+
+拒绝大长篇
+
+<br>
+
+可直接在行内使用的标签**`<span>`**, **`<cite>`**, **`<del>`**
+
+可选择markdown, 也可使用html标签的有 **`<a>`**, **`<img>`**
+
+如果要使用html的<div>、<table>、<pre>、<p> 标签, 必须在前后加上空行
+{% highlight md %}
+# 标题, # 标题 # => <h1>标题</h1>
+## 标题, ... => <h2>标题</h2>
 ...
 ##### 标题 => <h6>标题</h6>
 
+标题     标题
+==== , ----(任意数量)   => <h1>标题</h1>
+
+代码块
 > block => <blockquote>block</blockquote>
 
+
 修饰和强调
-
 * string * => <em>string</em>
-
 _ string _ => <em>string</em>
-
 ** string ** => <strong>string</strong>
-
 __ string __ => <strong>string</strong>
 
 
 列表
-
 * str1      <ul><li>str1</li> 
 * str2  =>      <li>str2</li>
 * str3          <li>str3</li></ul>
@@ -44,7 +56,6 @@ __ string __ => <strong>string</strong>
 3. str3          <li>str3</li></ol>
 
 链接
-
 [link name](www.xx.com "title") => <a href="www.xx.com" title="title">link name</a>
 
 可以定义数组
@@ -67,3 +78,6 @@ xxx![alt txt1][1]xxx![alt txt2][2]xxx
 
 也可以使用4个空格
     <div> => &lt;div&gt;
+
+
+{% endhighlight %}

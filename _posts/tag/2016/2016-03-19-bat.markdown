@@ -2,7 +2,8 @@
 layout: post
 title:  "用批处理运行本地server"
 date:   2016-03-17 21:38:00 +0800
-tags: tips 
+tags: tips
+uid: 1459685990 
 ---
 实用小工具, 本地安装apache太麻烦, 都有ruby和python都有了, 何必再添一个, 但是每次使用命令又很麻烦, 不但要先进入对应目录, 还得敲一排字母, win下用批处理解决, mac等我有钱了再解决
 
@@ -23,11 +24,3 @@ E:
 cd www
 start jekyll serve --baseurl '/blog'
 {% endhighlight %}
-
-
-ps: 至今不知道gem server如何指定其他目录, 这样的话连python也一道省了
-
-
-附上今日小段子:
-
-我听说你做了脑移植手术，到现在那个脑一直排斥你。

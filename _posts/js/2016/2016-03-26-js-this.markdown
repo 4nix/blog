@@ -4,63 +4,23 @@ title:  js中的this指向问题
 date:   2016-03-26 18:37:08 +0800
 categories: js
 ---
-1)  当在全局范围使用, this 指向全局
-2) 在函数内调用, foo(),  this 指向全局
-3) 方法中调用, test.foo(), this 指向test
-4) 调用构造函数, new foo(), this 指向新创建的对象
-5) 显示设置this, 比如使用 apply, call, 指向第一个参数
+
+1) 当在全局范围使用, **this** 指向全局
+
+2) 在函数内调用, **foo()**,  **this** 指向全局
+
+3) 方法中调用, **test.foo()**, **this** 指向test
+
+4) 调用构造函数, **new foo()**, **this** 指向新创建的对象
+
+5) 显示设置**this**, 比如使用 **apply**, **call**, 指向第一个参数
+
 6) 闭包中的函数会指向全局,
-    比如 Foo.method = function() {
-         test() {
-              // 这里使用this 会指向全局
-         }
-         test();
-      }
-asdfasf<a href="#">asf</a>
-
-
-**testfffffffffff**
-*testffffffffffffff*
-
-*`testcodetestcodetes<br>tcodetestcode`*
-*`testcodetestcodetes<br>tcodetestcode`*
-
-**`testcodetestcodetestcodetestcodetestcode`**
-
-<div class="code-bad">
-	<p>asdfas</p>
-	<p>asdf</p>
-</div>
-
-<div class="code-good">
-	<p>asdfas</p>
-
-	<p>asdf</p>
-</div>
-
-# h1
-
-## h2
-
-### h3
-
-#### h4
-
-##### h5
-
-###### h6
-
-{% highlight perl linenos startinline="3"  hl_lines="3" %}
-
-var $b = 2;
-var $a = 1;
-var $b = 2;
-var $a = 1;var $b = 2;
-var $a = 1;
+{% highlight js %}
+    Foo.method = function() {
+       test() {
+            // 这里使用this 会指向全局
+       }
+       test();
+    }
 {% endhighlight %}
-
-###### h6
-
-###### h6
-
-###### h6
