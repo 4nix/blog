@@ -164,7 +164,7 @@
 }
 
 .row-intro div:nth-child(2) {
-  line-height: 1.4;
+  line-height: 1.8;
   padding-left: 20px;
 }
 
@@ -180,6 +180,22 @@
   position: absolute; 
   top: 5px;
   left: -8px;
+}
+
+@font-face
+{
+font-family: poem;
+src: url(font/FZZJ-LJDXKFW.ttf);
+}
+
+.poem {
+  writing-mode: vertical-rl;
+  font-size: 24px;
+  font-family: poem
+}
+
+.poem h1 {
+  font-size: 40px;
 }
 
 /* row post */

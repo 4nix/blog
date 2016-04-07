@@ -17,15 +17,21 @@ layout: default
 
 
 <div class="row row-intro">
-  <div class="cols-sm-2 txt-right">
-    <p>人生若只如初见，何事秋风悲画扇？
-    <p>等闲变却故人心，却道故人心易变。
-    <p>骊山语罢清宵半，泪雨霖铃终不怨。
-    <p>何如薄幸锦衣郎，比翼连枝当日愿。
+  <div class="cols-sm-3 poem">
+    <h1>陋博铭</h1>
+    <p>天不在广, 有光就行
+    <p>地不在多, 有位就停
+    <p>虽是陋博, 确为心沥
+    <p>鸡鸣上工地, 狗眠方归寝
+    <p>扯淡有基友, 往来俱穷丁
+    <p>可以调戏我, 搅基情
+    <p>无弹窗之扰心, 无广告之乱形
+    <p>南阳诸葛庐，西蜀子云亭
+    <p>孔子曰: 丑怎么了?
   </div>
-  <div class="cols-sm-4">
-    {% for post in site.posts limit:6 %}
-    <p><a title="{{ post.title }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
+  <div class="cols-sm-3">
+    {% for post in site.posts limit:10 %}
+    <p><a title="{{ post.title }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a></p>
     {% endfor %}
   </div>
 </div>
