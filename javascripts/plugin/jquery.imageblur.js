@@ -3,9 +3,7 @@ $.fn.imageblur = function(options) {
 	var opts = $.extend(defaults, options);
 
 	var $this = $(this);
-
 	$this.ready(function() {
-
 
 		//更改postion
 		$this.parent().css("position", "relative");
@@ -32,18 +30,14 @@ $.fn.imageblur = function(options) {
 
 		ctx = docCanvas.getContext("2d");
 		var img = new Image();
-
+		img.src = $this.attr("src");
 
 		img.onload = function() {
 			ctx.drawImage(img, 0, 0, $this.width(), $this.height());
 			ctx.globalCompositeOperation = 'destination-out';
 		};
 		
-		img.src = $this.attr("src");
-
-
 		var state = false;
-
 	    docCanvas.addEventListener("mousedown", function(e) {
 	        state = true;
 	            var x = e.pageX;

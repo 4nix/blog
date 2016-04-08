@@ -312,6 +312,7 @@ src: url(font/FZZJ-LJDXKFW.ttf);
 /*  row about */
 .row-about .avatar img {
   width: 140px;
+  height: 186px;
 }
 
 .row-about .joke {

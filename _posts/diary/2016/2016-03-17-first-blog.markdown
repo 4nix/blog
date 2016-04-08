@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "第一个博客"
-custom_date: 2016-03-17 21:38:00 +0800
+custom_date: 2016-03-17 21:38:00
 categories: diary
 uid: 1459584026
 ---
