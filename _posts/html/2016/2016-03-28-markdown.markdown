@@ -18,7 +18,8 @@ uid: 1459677117
 可选择markdown, 也可使用html标签的有 **`<a>`**, **`<img>`**
 
 如果要使用html的<div>、<table>、<pre>、<p> 标签, 必须在前后加上空行
-{% highlight md %}
+
+{% highlight html %}
 # 标题, # 标题 # => <h1>标题</h1>
 ## 标题, ... => <h2>标题</h2>
 ...

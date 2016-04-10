@@ -11,7 +11,7 @@ uid: 1460203738
 
 <br>
 
-{% highlight js %}
+{% highlight js startinline="1"  hl_lines="3" %}
 var setObj = function(obj) {
 	console.log(obj.val, testObj.val);  //set-before set-before
 	obj.val = "set-after";

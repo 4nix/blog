@@ -464,3 +464,13 @@ div.highlight {
   background-color:#f1ede4;
   content:"Code"
 }
+
+
+.highlight .hll {
+    background-color: #f7ebc6;
+    border-left: 5px solid #f7d87c;
+    display: block;
+    margin-left: -14px;
+    margin-right: -14px;
+    padding-left: 9px;
+ }
