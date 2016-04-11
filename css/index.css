@@ -45,10 +45,10 @@
 
 
 .slider-msg {
-  font-size: 36px;
+  font-size: 34px;
   color: #fff;
   position: absolute;
-  width: 440px;
+/*  width: 460px;*/
 }
 
 .slider-ele:nth-child(1) .slider-msg {
@@ -58,8 +58,8 @@
 }
 
 .slider-ele:nth-child(2) .slider-msg {
-  z-index: 2;
-  left: 10%;
+  top: 20%;
+  left: 14%;
   animation: 12s slider-msg-show2 infinite;
 }
 
@@ -242,7 +242,8 @@ src: url(font/FZZJ-LJDXKFW.ttf);
 .row-post p.excerpt {
   font-size: 14px;
   color: #403607;
-  height: 66px;
+  height: 74px;
+  line-height: 1.4;
 }
 
 .row-post p.read-more {

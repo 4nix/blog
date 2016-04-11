@@ -22,5 +22,5 @@ jekyll server:
 call d:\Ruby22-x64\bin\setrbvars.bat
 E:
 cd www
-start jekyll serve --baseurl '/blog'
+start jekyll serve -s 'blog'
 {% endhighlight %}

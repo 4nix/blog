@@ -70,7 +70,7 @@ $.fn.imageblur = function(options) {
             var y = mouse.pageY;
             var c = docCanvas.getBoundingClientRect();
 
-            if (currentArc) {console.log(currentArc);
+            if (currentArc) {
             	ctx.putImageData(currentArc.obj, currentArc.x, currentArc.y);
             }
             currentObj = ctx.getImageData(x - c.left - 10, y - c.top - 10, 20, 20);
