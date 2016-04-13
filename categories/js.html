@@ -7,6 +7,7 @@ title: JS
    
    {% for post in site.categories.js limit:10 %}
    <div class="row-list-item">
+     <div class="row-list-date">{{ post.date | date: "%m.%d" }}</div>
      <section>
        <h1><a class="post-link" title="{{ post.title }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
        <div class="row-list-content">
