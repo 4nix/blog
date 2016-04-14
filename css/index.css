@@ -32,15 +32,22 @@
 
 
 .slider-ele:nth-child(1) .slider-img {
-  animation: 12s slider-img-show1 infinite;
+  opacity: 1;
+  animation: 12s slider-img-show infinite;
+  /*animation-delay: 0s;*/
+  
 }
 
 .slider-ele:nth-child(2) .slider-img {
-  animation: 12s slider-img-show2 infinite;
+  opacity: 0;
+  animation: 12s slider-img-show infinite;
+  animation-delay: 4s;
 }
 
 .slider-ele:nth-child(3) .slider-img {
-  animation: 12s slider-img-show3 infinite;
+  opacity: 0;
+  animation: 12s slider-img-show infinite;
+  animation-delay: 8s;
 }
 
 
@@ -71,26 +78,13 @@
 
 /* slider-img animate */
 
-@keyframes slider-img-show1 {
-  0% {opacity: 1;}
+@keyframes slider-img-show {
+  0% {opacity: 0;}
   33% {opacity: 1;}
   66% {opacity: 0;}
   100% {opacity: 0;}
 }
 
-@keyframes slider-img-show2 {
-  0% {opacity: 0;}
-  33% {opacity: 0;}
-  66% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-@keyframes slider-img-show3 {
-  0% {opacity: 0;}
-  33% {opacity: 0;}
-  66% {opacity: 0;}
-  100% {opacity: 1;}
-}
 
 /* slider-msg animate */
 
