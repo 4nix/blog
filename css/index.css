@@ -189,10 +189,9 @@
   left: -8px;
 }
 
-@font-face
-{
-font-family: poem;
-src: url(font/FZZJ-LJDXKFW.ttf);
+@font-face {
+  font-family: poem;
+  src: url(font/FZZJ-LJDXKFW.ttf);
 }
 
 .poem {
