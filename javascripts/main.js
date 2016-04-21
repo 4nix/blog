@@ -24,5 +24,4 @@ consoleMsg.show = function() {
 	console.groupEnd();
 }
 
-
 consoleMsg.show();
