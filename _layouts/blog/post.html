@@ -15,7 +15,7 @@ layout: default
 </article>
 
 
-<div class="ds-thread" data-thread-key="{% if page.uid %}{{ page.uid }}{% else %}{{ page.id }}{% endif %}" data-title="{{ page.title }}" data-url="{{ page.url | prepend: site.baseurl }}"></div>
+<div class="ds-thread" data-thread-key="{% if page.uid %}{{ page.uid }}{% else %}{{ page.id }}{% endif %}" data-title="{{ page.title }}" data-url="{{site.url}}{{ page.url | prepend: site.baseurl }}"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"4nix"};
 (function() {
