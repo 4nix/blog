@@ -18,13 +18,6 @@ h1 {
   font-size: 24px;
 }
 
-/* centent */
-
-.container {
-  margin: auto;
-  width: 1280px;
-}
-
 .row {
   /*overflow: auto;*/
 }
@@ -80,6 +73,10 @@ h1 {
   background-color: #3e4147;
   height: 44px;
   line-height: 44px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 #header a, #footer a {
@@ -115,9 +112,13 @@ h1 {
   font-size: 24px;
 }
 
-/* middle */
 
+/* centent */
 
+.container {
+  margin: 44px auto 0;
+  width: 1280px;
+}
 
 /* footer */
 

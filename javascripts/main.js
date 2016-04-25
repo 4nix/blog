@@ -1,3 +1,4 @@
+/* console log */
 var consoleMsg = {};
 
 consoleMsg.show = function() {
@@ -25,3 +26,5 @@ consoleMsg.show = function() {
 }
 
 consoleMsg.show();
+
+/* header scroll */
