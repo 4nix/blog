@@ -1,0 +1,87 @@
+---
+layout: post
+title:  webpack + react-hot的安装及使用
+date: 2016-04-26 22:36:10 +0800
+categories: js
+uid: 1461681373
+---
+## 一. 安装依赖
+
+{% highlight bash %}
+# webpack的包有个特点, 都是-loader 结尾
+npm install --save-dev react-hot-loader
+# 由于react-hot 是基于webpack server的, 所以下面的也要装
+npm install --save-dev webpack-dev-server
+{% endhighlight %}
+
+<br>
+
+## 二. 配置参数
+
+首先需要在根目录放一个**server.js**, 内容可以参照官方的
+[官方server.js](https://github.com/gaearon/react-hot-boilerplate/blob/master/server.js)
+
+{% highlight js %}
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
+var config = require('./webpack.config');
+
+new WebpackDevServer(webpack(config), {
+  publicPath: config.output.publicPath,
+  hot: true,
+  historyApiFallback: true
+}).listen(3000, 'localhost', function (err, result) {
+  if (err) {
+    return console.log(err);
+  }
+
+  console.log('Listening at http://localhost:3000/');
+});
+{% endhighlight %}
+
+<br>
+
+其次修改你的**webpack.config.js**
+{% highlight js hl_lines="5 6 10 11 16 22" %}
+var webpack = require('webpack');
+
+module.exports = {
+  entry: [
+  'webpack-dev-server/client?http://127.0.0.1:3000', // WebpackDevServer host and port
+  'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+  "./src/app.js"
+  ],
+  output: {
+    path: __dirname,  //这里要特别注意要加上绝对路径, 否则server.js会启动不起来, 会报"invalid path"的错误
+    publicPath: '/build',
+    filename: "/build/bundle.js"
+  },
+  module: {
+    loaders: [
+      { test: /\.js$/,  loaders: ["react-hot", "babel-loader"]} //注意这里是loaders, react-hot要在最前面
+    ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()]  //这里也别漏了
+};
+{% endhighlight %}
+
+<br>
+
+## 三. 使用
+启动两个**cmd**吧, 一个为**npm**, 一个为**webpack**
+{% highlight bash hl_lines="2 6" %}
+# 启动我们的http服务
+npm server.js
+
+# 这个是不能少的, 一开始我以为只要启动http就行了, 结果死活不替换, 后来才知道下面这个还是不能省
+# webpack -w 本身就是实时打包的了, 据说配合react-hot会加快速度(我没验证能加速多少), 因为react-hot只替换更改的部分
+webpack -w
+{% endhighlight %}
+
+<br>
+
+参考资料
+[react hot doc](http://gaearon.github.io/react-hot-loader/getstarted/)
