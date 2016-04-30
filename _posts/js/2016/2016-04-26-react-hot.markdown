@@ -53,8 +53,8 @@ module.exports = {
   ],
   output: {
     path: __dirname,  //这里要特别注意要加上绝对路径, 否则server.js会启动不起来, 会报"invalid path"的错误
-    publicPath: '/build',
-    filename: "/build/bundle.js"
+    publicPath: '/build/',
+    filename: "bundle.js" //这里我之前写的是 /build/bundle.js, 这会引发一些混淆视听的问题
   },
   module: {
     loaders: [
@@ -70,8 +70,8 @@ module.exports = {
 
 <br>
 
-## 三. 使用
-启动两个**cmd**吧, 一个为**npm**, 一个为**webpack**
+## <del>三. 使用</del>
+<del>启动两个**cmd**吧, 一个为**npm**, 一个为**webpack** </del>
 {% highlight bash hl_lines="2 6" %}
 # 启动我们的http服务
 npm server.js
@@ -82,6 +82,60 @@ webpack -w
 {% endhighlight %}
 
 <br>
+
+### 三. 使用(上面那个方法不对)
+我就奇怪为什么 **webpack -w**已经是实时打包了, 那**react-hot**作用不就很小吗, 怎么能火的一谈糊涂, 
+
+而且官方文档并没有说要运行**webpack**啊, 能称为**利器**肯定能舍弃**webpack**的
+
+一定是哪里弄错了, 可恶的是也不报哪里出错了, 为啥就是不能实时更新呢?
+
+<br>
+
+实验了很多次后终于发现原因了, 原因就是 **页面并没有加载到实时更新的文件!!!**
+
+为什么会这样呢? 因为 **output** 里的文件是真实存在的, 这很容易跟页面需要加载的文件混淆.
+
+其实我们生成的**bundle.js**并不在文件夹下, 你在根文件夹下是找不到那个实时生成的**bundle**文件的.
+
+<br>
+
+由于我的**output** 之前设置的是 **publicPath: '/build/', filename: "/build/bundle.js"**, 
+因此我真正要加载的文件是 **src="/build/build/bundle.js"**
+
+但是我根目录下有**webpack**生成的**/build/bundle.js**这个文件, 导致我这种新手很容易认为页面要加载这个文件, 因此写成了**src="/build/bundle.js"**, 所以我刷到死他也不更新!!!!
+
+<br>
+
+{% highlight bash hl_lines="5 3 4 9" %}
+//webpack.config.js
+output: {
+  path: __dirname,  //这三步单独拿出来, 注意配置一定要跟页面相符合, 
+  publicPath: '/build/',
+  filename: "bundle.js"
+},
+
+//html
+<script src="build/bundle.js"></script>
+
+//别忘了启动我们http服务 npm server.js
+
+{% endhighlight %}
+
+
+<br>
+
+这里可以自己验证下, **build**文件夹下新建两个文件 **bundle.js**, **test.js**, 内容随意.
+同时页面添加**`<script src="build/test.js"></script>`**
+
+你会发现只有**test.js**生效了
+
+<br>
+
+有疑问还是得去验证啊, 不然又稀里糊涂了.
+
+<br>
+
 
 参考资料
 [react hot doc](http://gaearon.github.io/react-hot-loader/getstarted/)
