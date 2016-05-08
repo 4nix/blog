@@ -128,3 +128,8 @@
 .post-content table tbody tr:nth-child(n+1) {
   background-color: #fff;
 }
+
+.post-content ul {
+  margin-left: 20px;
+  list-style: circle;
+}
